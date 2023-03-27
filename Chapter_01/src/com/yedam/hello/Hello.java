@@ -19,7 +19,7 @@ public class Hello {
 	System.out.println(result3);
 	System.out.println(result4);
 	
-	//문제3
+	//문제3)
 	
 	short var1 = 128;
 	String var2 = "B";
@@ -28,23 +28,40 @@ public class Hello {
 	double var5 = 43.93106;
 	double var6 = 301.3;
 	
-	System.out.printf("%d,byte",var1);
-	System.out.printf("\n%s,String",var2);
-	System.out.printf("\n%5d,int",var3);
-	System.out.printf("\n%12d,long",var4);
-	System.out.printf("\n%-10.6f,double",var5);
-	System.out.printf("\n%-10.2f,double",var6);
+	System.out.printf("%d,byte\n",var1);
+	System.out.printf("%s,String\n",var2);
+	System.out.printf("%5d,int\n",var3);
+	System.out.printf("%12d,long\n",var4);
+	System.out.printf("%-10.6f,double\n",var5);
+	System.out.printf("%-10.2f,double\n",var6);
 	
-	//문제 4
+	//문제4)
 	byte a = 35;
 	byte b = 25;
 	int c = 463;
 	long d = 1000L;
 	
 	long result5  =  a + c + d;
-	System.out.println(\nresult5);
-	 
+	System.out.println(result5);
+	
+	int result6 = a + b + c;
+	System.out.println(result6);
+	
+	double e = 45.31;
+	double result7 = c + d + e;
+	System.out.println(result7);	
+	
+	//문제5)
+	
+	int intValue1 = 24;
+	int intValue2 = 3;
+	int intValue3 = 8;
+	int intValue4 = 10;
+	char charValue = 'A';
+	String strValue = "번지";
 	
 	
+	String result8 = "" + charValue + (intValue1 + intValue2) + intValue3 + (String) strValue + (double) intValue4 ; 
+	System.out.println(result8);
 	}
 }
