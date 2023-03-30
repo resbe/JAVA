@@ -87,29 +87,35 @@ public class Homework3 {
 		 * (1) . 알맞은 코드를 넣어 완성하시오
 		 * 배열 array의 임의의 값 j를 활용하여 현재위치와 j의 위치를 바꾼다.
 		 */
+				
+				tmp = array[j];
+				array[j] = array[i];
+			    array[i] = tmp;
+				}
+				
+				for(int i = 0; i < array.length; i++) {
+			    System.out.print(array[i] + " ");
 				}
 		/* (2) */
 		// array->copyArray 배열 복사하는데, 0번째부터 2번째까지 총 3개만 복사
-			for (int i = 0; i < copyArray.length; i++) {
-				copyArray[i] = array[i];
-				System.out.print(copyArray[i]);
-			}
-
+				System.arraycopy( array, 0, copyArray, 0, 3);
+				for(int i = 0; i < copyArray.length; i++) {
+				    System.out.print(copyArray[i] + " ");
+				}
 		//문제7.
 		//알파벳 'A'-'Z'까지 반복문을 활용하여 배열에 입력하고, 하나의 문자를 입력 받아
 			//그 문자가 어느위치에 있는지 출력하시오.	
+				char[] alp = new char[26] ;
+				System.out.println("문자를 입력해주세요 >");
+				String alpbet = sc.next();
+				for(int i =0 ; i<alp.length ;i++){
+				      alp[i] = (char) (65 + i) ;
+				      if( alp[i] == alpbet.charAt(0)) {
+				    System.out.println("문자의 위치는 " + i + "입니다.");
+				      }
 			
-			
-	
-			
-			
-			
-			
-//	    Char [] arr3 = { 'A', 'B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
-//	
-	
-	
+				}
 	}
-
 }
+
 
