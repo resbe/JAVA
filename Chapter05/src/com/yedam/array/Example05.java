@@ -40,6 +40,10 @@ public class Example05 {
 				System.out.println("학생수> ");
 				studentNum = sc.nextInt();
 				sc.nextLine();
+				if(studentNum < 5 || studentNum >10) {
+					 System.out.println("5~10까지의 범위를 설정해주세요");
+					 continue;
+				}
 				scores = new int[studentNum];
 			
 			}else if(selectNo ==2) {
@@ -79,3 +83,4 @@ public class Example05 {
 	}
 
 }
+

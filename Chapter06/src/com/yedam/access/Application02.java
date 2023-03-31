@@ -13,7 +13,7 @@ public class Application02 {
 		//default
 		as.basic = "default";
 		//private
-		as.privacy = "private";
+//		as.privacy = "private";
  	}
 
 }
