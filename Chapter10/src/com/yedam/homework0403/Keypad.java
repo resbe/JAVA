@@ -8,7 +8,6 @@ public interface Keypad {
 	 public abstract void leftDownButton(); 
 	 public abstract void rightUpButton();
 	 public abstract void rightDownButton();
-	 public abstract void changeMode() {
-	 }
+	 public abstract void changeMode(); 
 
 }

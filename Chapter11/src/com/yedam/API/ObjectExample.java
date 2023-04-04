@@ -28,11 +28,17 @@ public class ObjectExample {
 		
 		System.out.println(value2);
 		
-	}
+		System.out.println("---------------------");
+		
+		Object obj = new Object();
+		
+;		System.out.println(obj.toString());
 
-	@Override
-	public int hashCode() {
-		return id.hashCode;
+		System.out.println(member);
+		System.out.println(member2);
+		System.out.println(member3.toString());
+		
+		
+		
 	}
-
 }

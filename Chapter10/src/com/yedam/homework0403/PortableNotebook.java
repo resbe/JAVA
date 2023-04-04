@@ -2,6 +2,8 @@ package com.yedam.homework0403;
 
 public class PortableNotebook implements Notebook, Tablet {
 
+	
+	
 	@Override
 	public void watchVideo() {
 		System.out.println( "'문서 프로그램'을 통해 문서를 작성.");
