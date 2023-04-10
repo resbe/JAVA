@@ -7,7 +7,7 @@ public class Application01 {
 		
 		child.lastName = "이";
 		child.getInfo();
-		child.money = 1000;
+//		child.money = 1000;
 
 	}
 

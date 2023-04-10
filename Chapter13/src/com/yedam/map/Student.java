@@ -13,7 +13,7 @@ public class Student {
 	public boolean equals(Object obj) {
 		if(obj instanceof Student) {
 			Student std = (Student) obj;
-			return (sno == std.sno) && (sname.equals(std.sname))
+			return (sno == std.sno) && (sname.equals(std.sname));
 		}
 		return false;
 	}

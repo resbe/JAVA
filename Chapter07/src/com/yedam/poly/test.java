@@ -60,7 +60,7 @@ public class test {
 			 System.out.println("===1.주사위 크기\\ 2.주사위 굴리기 \\ 3.결과 보기 \\ 4.가장 많이 나온 수 \\ 5.종료");
 			 System.out.println("메뉴 > ");
 			 
-			 String selecNo = sc.nextLine();
+			 String selectNo = sc.nextLine();
 			 
 			 switch(selectNo) {
 			 case "1" :
