@@ -105,7 +105,7 @@ public class MemberDAO extends DAO {
 		}
 		return result;
 	}
-	//3. 회원 수정 - pw 변경
+	//3. 회원 수정 - id 변경
 	public int memberUpdate(Member member) {
 		int result = 0;
 		try {
