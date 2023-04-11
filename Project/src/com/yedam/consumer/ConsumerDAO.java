@@ -1,8 +1,6 @@
 package com.yedam.consumer;
 
 import com.yedam.common.DAO;
-import com.yedam.consumer.Consumer;
-import com.yedam.consumer.ConsumerDAO;
 
 public class ConsumerDAO extends DAO{
 private static ConsumerDAO consumerDao = new ConsumerDAO();
@@ -12,6 +10,9 @@ private static ConsumerDAO consumerDao = new ConsumerDAO();
 	}
 	
 	public static ConsumerDAO getInstance() {
+		if(consumerDao == null) {
+			consumerDao = new ConsumerDAO();
+		}
 		return consumerDao;
 	}
 	
@@ -21,7 +22,7 @@ private static ConsumerDAO consumerDao = new ConsumerDAO();
 		Consumer consumer = null;
 		try {
 			conn();
-			String sql = "SELECT * FROM customer WHERE customer_id = ?";
+			String sql = "SELECT * FROM consumer WHERE consumerId = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			
@@ -29,12 +30,13 @@ private static ConsumerDAO consumerDao = new ConsumerDAO();
 			
 			if(rs.next()) {
 				consumer = new Consumer();
-				consumer.setConsumerId(rs.getString("consumer_id"));
-				consumer.setConsumerPw(rs.getString("consumer_pw"));
-				consumer.setConsumerPw2(rs.getString("consumer_pw2"));
-				consumer.setConsumerName(rs.getString("consumer_name"));
-				consumer.setConsumerNickName(rs.getString("consumer_nickname"));
-				consumer.setConsumerTell(rs.getString("consumer_tell"));
+				consumer.setConsumerId(rs.getString("consumerId"));
+				consumer.setConsumerPw(rs.getString("consumerPw"));
+				consumer.setConsumerPw2(rs.getString("consumerPw2"));
+				consumer.setConsumerName(rs.getString("consumerName"));
+				consumer.setConsumerNickName(rs.getString("consumerNickName"));
+				consumer.setConsumerTell(rs.getString("consumerTel"));
+				consumer.setUserGrade(rs.getString("userGrade"));
 					
 			}
 			
@@ -46,13 +48,17 @@ private static ConsumerDAO consumerDao = new ConsumerDAO();
 		return consumer;
 		}
 	
+	//
+	
+	
+	
 	//회원가입
 	
 	public int consumerAdd(Consumer consumer) {
 		int result = 0;
 		try {
 			conn();
-			String sql = "insert into customer values (?,?,?,?,?,?,?)";
+			String sql = "insert into consumer values (?,?,?,?,?,?,?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, consumer.getConsumerId());

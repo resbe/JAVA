@@ -17,5 +17,6 @@ public class Book {
 	private int bookPriced;
 	private int bookSale;
 	private String bookLocation;
+	private int bookId;
 	
 }

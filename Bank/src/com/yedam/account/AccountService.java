@@ -67,6 +67,7 @@ public class AccountService {
 		
 		int result = AccountDAO.getInstance().updateMoney(account, cmd);
 		
+		
 		if(result == 1 && cmd ==1) {
 			System.out.println("입금 완료");
 		}else if(result == 1 && cmd == 2) {
