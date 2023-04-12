@@ -27,21 +27,32 @@ public class BookService {
 			System.out.println("고유번호 : " + book.getBookId());
 	
 		}
+		choiceBook();
 	}
 	}
 	
 	public void choiceBook() {
+		System.out.println("선택하실 책의 고유번호를 입력해주세요");
+		int number = Integer.parseInt(sc.nextLine());
+		Book book = BookDAO.getInstance().getsearchBookName(number);
+		
+		System.out.println("책이름 : " + book.getBookName());
+		System.out.println("저자 : " + book.getBookWriter());
+		System.out.println("가격 : " + book.getBookPriced() + "원");
+		System.out.println("고유번호 : " + number);
+			
 		System.out.println("구매하시겠습니까?");
 		System.out.println("1. 예 | 2.아니오");
 		menu = Integer.parseInt(sc.nextLine());
 		if (menu == 1) {
-			System.out.println("구매하고 싶은 책의 고유 번호를 입력해주세요");
+		 BookDAO.getInstance().getbookbuying(number);
+		 
 		}else{
 			System.out.println("뒤로가기");
 			
 		}
-	}
 	
+	}
 	
 	//책 저자 검색
 	public void getBookWriter() {
@@ -51,14 +62,16 @@ public class BookService {
 		
 		if(booklist.isEmpty()) {
 			System.out.println("해당 책이 존재하지 않습니다");
-		}for(Book book : booklist) {
+		}else{
+			for(Book book : booklist) {
 			System.out.println("책이름 : " + book.getBookName());
 			System.out.println("저자 : " + book.getBookWriter());
 			System.out.println("가격 : " + book.getBookPriced());
-			System.out.println("위치 : " + book.getBookLocation());
+			System.out.println("고유번호 : " + book.getBookId());
 		}
+		choiceBook();
 	}
-	
+	}
 	// 책 장르 검색
 	
 	public void getBookGenre() {
@@ -66,52 +79,41 @@ public class BookService {
 		String bookGenre = sc.nextLine();
 		List <Book> booklist = BookDAO.getInstance().getBookGenre(bookGenre);
 		
-//		if(book == null){
-//			System.out.println("해당 책은 존재하지 않습니다.");
-//		}else {
-//			System.out.println("책이름 : " + book.getBookName());
-//			System.out.println("저자 : " + book.getBookWriter());
-//			System.out.println("가격 : " + book.getBookPriced());
-//			System.out.println("위치 : " + book.getBookLocation());
-//		}
-		for(Book book : booklist) {
+
+		if(booklist.isEmpty()) {
+			System.out.println("해당 책이 존재하지 않습니다");
+		}else{
+			for(Book book : booklist) {
 			System.out.println("책이름 : " + book.getBookName());
 			System.out.println("저자 : " + book.getBookWriter());
 			System.out.println("가격 : " + book.getBookPriced());
 			System.out.println("위치 : " + book.getBookLocation());
+			}
 		}
 	}
 	
-	
+	//Best 도서
+	public void getBestBook() {
+		List<Book> booklist = BookDAO.getInstance().getBestBook();
 
-	
-	
-	
-	public void getbookBuy(int search) {
-		System.out.println("구매하시겠습니까?");
-		System.out.println("1. 예 | 2.아니오");
-		menu = Integer.parseInt(sc.nextLine());
-		if (menu == 1) {
-			buy = 1;
-		}else if(menu == 2) {
-			buy = 0;
+		for(int i = 0; i<booklist.size(); i++) {
+			System.out.println(i+1 + "등");
+			System.out.println("책 이름 : " + booklist.get(i).getBookName());
+			System.out.println("책 작가 : " + booklist.get(i).getBookWriter());
+			System.out.println("고유번호 : " + booklist.get(i).getBookId());
 		}
+		choiceBook();
 		
-		Book book = new Book();
-		
-		if (search == 1) {
-			book.setBookName(Null);
-		}
-	 
-		book.setBookSale(buy);
-		
-		
-		int result = BookDAO.getInstance().
-				
+//		for(Book book : booklist) {
+//			
+//			System.out.println("책 이름 : " + book.getBookName());
+//			System.out.println("책 작가 : " + book.getBookWriter());
+//			System.out.println("고유번호 : " + book.getBookId());
+//			
+//		}
+//		for (int i = 0 ; i < booklist.size(); i ++) {
+//			System.out.println(i+1 + ":" );
 	}
-	
-	
-	
 	
 
 

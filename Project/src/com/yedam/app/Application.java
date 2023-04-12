@@ -7,12 +7,11 @@ import com.yedam.consumer.ConsumerService;
 public class Application {
 	Scanner sc = new Scanner(System.in);
 	ConsumerService cs = new ConsumerService();
+	int menuNo = 0;
 
 	public Application() {
 		run();
 	}
-
-	int menuNo = 0;
 
 	private void run() {
 		while (true) {
@@ -29,6 +28,8 @@ public class Application {
 			} else if (menuNo == 3) {
 				System.out.println("프로그램 종료");
 				break;
+			}else {
+				System.out.println("잘못입력하셨습니다. 다시입력해주세요");
 			}
 		}
 	}
