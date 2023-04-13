@@ -15,21 +15,22 @@ public class Application {
 
 	private void run() {
 		while (true) {
-			System.out.println("1. 로그인 | 2. 회원가입 | 3. 종료");
-			menuNo = Integer.parseInt(sc.nextLine());
+			if (ConsumerService.ConsumerInfo == null) {
+				System.out.println("1. 로그인 | 2. 회원가입 | 3. 종료");
+				menuNo = Integer.parseInt(sc.nextLine());
 
-			if (menuNo == 1) {
-				cs.login();
-				if (ConsumerService.ConsumerInfo != null) {
-					new ManageMent();
+				if (menuNo == 1) {
+					cs.login();
+				} else if (menuNo == 2) {
+					cs.consumerAdd();
+				} else if (menuNo == 3) {
+					System.out.println("프로그램 종료");
+					break;
+				} else {
+					System.out.println("잘못입력하셨습니다. 다시입력해주세요");
 				}
-			} else if (menuNo == 2) {
-				cs.consumerAdd();
-			} else if (menuNo == 3) {
-				System.out.println("프로그램 종료");
-				break;
-			}else {
-				System.out.println("잘못입력하셨습니다. 다시입력해주세요");
+			} else if(ConsumerService.ConsumerInfo != null) {
+				new ManageMent();
 			}
 		}
 	}
